@@ -89,34 +89,5 @@ def fetch_jokes():
         print(f"Error occurred: {e}")
         return jsonify({'error': 'An unexpected error occurred. Please try again.'}), 500
 
-"""
-@app.route('/get_jokes', methods=['GET'])
-def get_jokes():
-    try:
-        jokes = Joke.query.all()
-        jokes_list = []
-
-        for joke in jokes:
-            jokes_list.append({
-                'id': joke.id,
-                'category': joke.category,
-                'type': joke.type,
-                'joke': joke.joke,
-                'setup': joke.setup,
-                'delivery': joke.delivery,
-                'nsfw': joke.nsfw,
-                'political': joke.political,
-                'sexist': joke.sexist,
-                'safe': joke.safe,
-                'lang': joke.lang
-            })
-
-        return jsonify({'jokes': jokes_list}), 200
-
-    except Exception as e:
-        print(f"Error occurred: {e}")
-        return jsonify({'error': 'An unexpected error occurred. Please try again.'}), 500
-"""
-
 if __name__ == '__main__':
     app.run(debug=True)
